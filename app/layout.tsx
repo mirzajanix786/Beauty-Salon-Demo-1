@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/sections/Navbar";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { CursorGlow } from "@/components/CursorGlow";
+import { DemoBanner } from "@/components/DemoBanner";
 
 /**
  * Fonts are loaded via a standard <link> (see head below) rather than
@@ -115,6 +116,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <DemoBanner />
         <LoadingScreen />
         <CursorGlow />
         <Navbar />

@@ -173,6 +173,39 @@ export function Footer() {
           <span>Crafted with restraint.</span>
         </div>
       </div>
+
+      {/* Cimple Tech demo notice */}
+      <div
+        id="cimple-tech-notice"
+        role="contentinfo"
+        aria-label="Cimple Tech demo notice"
+        style={{
+          borderTop: "1px solid rgba(255,255,255,0.06)",
+          backgroundColor: "rgba(255,255,255,0.025)",
+          padding: "12px 24px",
+          textAlign: "center",
+        }}
+      >
+        <p
+          style={{
+            margin: 0,
+            fontFamily:
+              "'Space Grotesk', 'Manrope', system-ui, -apple-system, sans-serif",
+            fontSize: "10px",
+            fontWeight: 400,
+            letterSpacing: "0.05em",
+            color: "rgba(255,255,255,0.22)",
+            lineHeight: 1.6,
+          }}
+        >
+          This website is a demonstration project created for{" "}
+          <span style={{ color: "rgba(200,167,106,0.55)", fontWeight: 500 }}>
+            Cimple Tech
+          </span>
+          . It is intended solely for client presentations, development, and
+          evaluation purposes.
+        </p>
+      </div>
     </footer>
   );
 }
