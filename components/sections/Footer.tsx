@@ -170,7 +170,25 @@ export function Footer() {
         <div className="hairline" />
         <div className="flex flex-col items-center justify-between gap-4 py-8 font-mono text-[10px] uppercase tracking-widest2 text-ivory/25 md:flex-row">
           <span>© {new Date().getFullYear()} Maison Lumière. All rights reserved.</span>
-          <span>Crafted with restraint.</span>
+
+          {/* Cimple Tech badge */}
+          <a
+            href="https://cimpletech.com.au/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Developed for Cimple Tech — opens in new tab"
+            className="group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white/[0.04] px-3 py-1.5 font-mono text-[9px] uppercase tracking-widest2 text-ivory/35 transition-all duration-300 hover:border-gold/50 hover:bg-white/[0.08] hover:text-gold/70"
+          >
+            {/* Small diamond/dot accent */}
+            <span
+              aria-hidden="true"
+              className="block h-1 w-1 rounded-full bg-gold/50 transition-colors duration-300 group-hover:bg-gold"
+            />
+            Developed for{" "}
+            <span className="text-gold/55 transition-colors duration-300 group-hover:text-gold">
+              Cimple Tech
+            </span>
+          </a>
         </div>
       </div>
 
