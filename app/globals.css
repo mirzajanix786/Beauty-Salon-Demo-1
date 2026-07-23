@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-mono: "Space Grotesk", monospace;
+}
+
+html {
+  background: #F8F5F1;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F8F5F1;
+  color: #2B2B2B;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #C8A76A;
+  color: #2B2B2B;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F5F1;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8A76A;
+  border-radius: 3px;
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus, styled to match the gold accent language */
+:focus-visible {
+  outline: 2px solid #C8A76A;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.focus\:not-sr-only:focus {
+  position: fixed;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Utility: editorial grain overlay */
+.grain-overlay {
+  position: relative;
+}
+.grain-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Utility: glass panel (for use on dark backgrounds) */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(200, 167, 106, 0.18);
+}
+
+/* Utility: glass panel variant for use on light/ivory backgrounds */
+.glass-on-light {
+  background: rgba(43, 43, 43, 0.05);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(168, 129, 74, 0.25);
+}
+
+/* Gold hairline divider */
+.hairline-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C8A76A 50%, transparent);
+}
+
+/* Editorial oversized bg type — on dark backgrounds */
+.bg-type {
+  -webkit-text-stroke: 1px rgba(251, 246, 239, 0.08);
+  color: transparent;
+}
+
+/* Editorial oversized bg type — on light/ivory backgrounds */
+.bg-type-on-light {
+  -webkit-text-stroke: 1px rgba(43, 43, 43, 0.07);
+  color: transparent;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(120deg, #C8A76A 0%, #f5e6c8 45%, #C8A76A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Magnetic / luxury button base */
+.btn-luxury {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-luxury::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #C8A76A;
+  transform: translateX(-101%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+.btn-luxury:hover::before {
+  transform: translateX(0);
+}
+
+/* Primary gold CTA button with fill animation from bottom */
+.btn-gold-fill {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(135deg, #C8A76A 0%, #DEC38F 50%, #A8814A 100%);
+  color: #0A0A0C;
+}
+.btn-gold-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.btn-gold-fill:hover::after {
+  opacity: 1;
+}
+
+/* Dark deep section background */
+.bg-deep {
+  background-color: #0A0A0C;
+}
+.bg-charcoal {
+  background-color: #131316;
+}
+
+/* Glass panel on very dark backgrounds */
+.glass-dark {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 167, 106, 0.15);
+}
+
+/* Floating pill navbar */
+.nav-pill {
+  border-radius: 22px;
+  border: 1px solid rgba(200, 167, 106, 0.18);
+  background: rgba(10, 10, 12, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.nav-pill-scrolled {
+  background: rgba(10, 10, 12, 0.88);
+  border-color: rgba(200, 167, 106, 0.28);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.55);
+}
+
+/* Section divider hairline */
+.hairline {
+  height: 1px;
+  background: rgba(200, 167, 106, 0.12);
+}
+
+/* Editorial section number */
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #C8A76A;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-num::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: #C8A76A;
+  opacity: 0.6;
+}
+
