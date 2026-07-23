@@ -69,8 +69,8 @@ export function Navbar() {
 
   return (
     <>
-      {/* Header — flush to top (top:0), zero gap, full width */}
-      <header className="fixed inset-x-0 top-0 z-50 w-full transition-all duration-300">
+      {/* Header — sits directly below the 36px DemoBanner */}
+      <header className="fixed inset-x-0 top-[36px] z-50 w-full transition-all duration-300">
         <motion.nav
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -196,7 +196,7 @@ export function Navbar() {
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.45, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-[70] flex flex-col bg-[#0A0A0C] px-8 py-7"
+            className="fixed inset-x-0 top-[36px] bottom-0 z-[70] flex flex-col bg-[#0A0A0C] px-8 py-7"
           >
             {/* Ambient gold glow */}
             <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/8 blur-[140px]" />

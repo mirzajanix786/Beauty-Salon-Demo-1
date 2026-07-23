@@ -13,7 +13,7 @@ export function PageHeader({
   crumb: string;
 }) {
   return (
-    <header className="relative flex items-center overflow-hidden bg-[#0A0A0C] pb-8 pt-24 md:pb-10 md:pt-28 border-b border-white/05">
+    <header className="relative flex items-center overflow-hidden bg-[#0A0A0C] pb-8 pt-[132px] md:pb-10 md:pt-[148px] border-b border-white/05">
       {/* Ambient subtle glow */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_30%,rgba(200,167,106,0.08),transparent_65%)]" />
